@@ -1,0 +1,29 @@
+ion-toolbar {
+  --background: #011c40;  
+}
+
+ion-icon {
+  color: #2cb1bf;
+}
+
+ion-list {
+  height: 100%;
+}
+
+ion-item {
+  --ripple-color: #2cb1bf;
+  --border-color: #2cb1bf;
+  --border-style: dashed;
+  --border-width: 2px;
+  --detail-icon-opacity: 0.6;
+  --detail-icon-font-size: 10px;
+}
+
+.logout {
+  --border-color:#dd2f30;
+  --ripple-color: #f5a9aa;
+
+  position: absolute; 
+  bottom: 0;
+  width: 100%;
+}
