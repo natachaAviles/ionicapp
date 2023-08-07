@@ -1,4 +1,19 @@
 <ion-content [fullscreen]="true">
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 80%">
+      <ion-segment mode="ios" value="all">
+        <ion-segment-button value="all">
+          Mis casos
+        </ion-segment-button>
+        <ion-segment-button value="asigned">
+          Asignados
+        </ion-segment-button>
+        <ion-segment-button value="profile">
+          Perfil
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+  </div>
   <ion-list>
     <app-list-item [isSuccess]="true"></app-list-item>
     <app-list-item [isWarning]="true"></app-list-item>
