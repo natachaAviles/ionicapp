@@ -15,21 +15,88 @@
     </div>
   </div>
   <ion-list>
-    <app-list-item [isSuccess]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isSuccess]="true"></app-list-item>
-    <app-list-item [isSuccess]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isError]="true"></app-list-item>
-    <app-list-item [isWarning]="true"></app-list-item>
-    <app-list-item [isSuccess]="true"></app-list-item>
+    <app-list-item 
+      [isWarning]="true" 
+      [isFavorite]="true"
+      [status]="'Abierto'" 
+      [score]="'5'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>
+    <app-list-item 
+      [isSuccess]="true"
+      [isFavorite]="true" 
+      [status]="'En curso'" 
+      [score]="'7'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>
+    <app-list-item 
+      [isError]="true"
+      [isFavorite]="true" 
+      [status]="'Resuelto'" 
+      [score]="'2'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>
+    <app-list-item 
+      [isSuccess]="true" 
+      [status]="'En curso'" 
+      [score]="'6'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item> 
+    <app-list-item 
+      [isWarning]="true" 
+      [status]="'Sin gestión'" 
+      [score]="'5'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item> 
+    <app-list-item 
+      [isSuccess]="true" 
+      [status]="'Sin contacto'" 
+      [score]="'6'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>
+    <app-list-item 
+      [isError]="true" 
+      [status]="'Resuelto'" 
+      [score]="'1'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>
+    <app-list-item 
+      [isError]="true" 
+      [status]="'Abierto'" 
+      [score]="'2'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+    >
+    </app-list-item>     
   </ion-list>
 </ion-content>

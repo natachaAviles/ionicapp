@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 
@@ -6,17 +6,20 @@ import { IonicModule } from '@ionic/angular';
   selector: 'app-list-item',
   templateUrl: './list-item.component.html',
   styleUrls: ['./list-item.component.scss'],
-  imports: [IonicModule, CommonModule],
   standalone: true,
+  imports: [IonicModule, CommonModule],
 })
 
-export class ListItemComponent  implements OnInit {
-  @Input() isSuccess = false;
-  @Input() isWarning = false;
-  @Input() isError = false;
+export class ListItemComponent {
+  @Input() isWarning?: boolean;
+  @Input() isSuccess?: boolean;
+  @Input() isError?: boolean;
+  @Input() isFavorite?: boolean;
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  @Input() status?: string;
+  @Input() score?: string;
+  @Input() name?: string;
+  @Input() type?: string;
+  @Input() date?: string;
+  @Input() comment?: string;
 }

@@ -22,6 +22,18 @@
   }
 }
 
+.disabled {
+  .loyalink-score {
+    background-color: #e6eaf2;
+    border: 1px dashed gray;
+    color: gray;
+  }
+}
+
+.favorite {
+  color: #ffc107;
+}
+
 ion-label {
   margin-left: 10px;
 }
@@ -31,6 +43,8 @@ ion-label {
   color: white;
   margin: 0;
   border-radius: 5px;
+  height: 65px;
+  width: 72px;
   text-align: center;
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
 }
