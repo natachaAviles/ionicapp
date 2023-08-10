@@ -28,6 +28,10 @@
     border: 1px dashed gray;
     color: gray;
   }
+
+  ion-item::part(native) {
+    background: #e6eaf2a1;
+  }
 }
 
 .favorite {
