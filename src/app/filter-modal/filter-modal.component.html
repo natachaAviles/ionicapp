@@ -5,17 +5,57 @@
         <ion-buttons slot="start">
           <ion-button (click)="cancel()">Cancel</ion-button>
         </ion-buttons>
-        <ion-title>Welcome</ion-title>
+        <ion-title>Filtrar</ion-title>
         <ion-buttons slot="end">
           <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
     <ion-content class="ion-padding">
-      <ion-item>
-        <ion-label position="stacked">Enter your name</ion-label>
-        <ion-input type="text" placeholder="Your name"></ion-input>
-      </ion-item>
+      <div class="filter-section">
+        <ion-label position="stacked">Ordenar</ion-label>
+        <div style="display: flex; flex-wrap: wrap;">
+          <ion-chip>
+            <ion-checkbox>Más recientes</ion-checkbox>
+          </ion-chip>
+          <ion-chip>
+            <ion-checkbox>Más antiguos</ion-checkbox>
+          </ion-chip>
+        </div>
+      </div>
+      <div class="filter-section">
+        <ion-label position="stacked">Nota</ion-label>
+        <div style="display: flex; flex-wrap: wrap;">
+          <ion-chip>Menor o igual a </ion-chip>
+          <ion-chip>Mayor o igual a</ion-chip>
+        </div>
+      </div>
+      <div class="filter-section">
+        <ion-label position="stacked">Estado de gestión</ion-label>
+        <div style="display: flex; flex-wrap: wrap;">
+          <ion-chip>
+            <ion-checkbox>Abiertos</ion-checkbox>
+          </ion-chip>
+          <ion-chip>
+            <ion-checkbox>Cerrados</ion-checkbox>
+          </ion-chip>
+        </div>
+        <div style="display: flex;">
+          <ion-chip>
+            <ion-checkbox>Sin gestión</ion-checkbox>
+          </ion-chip>
+          <ion-chip>
+            <ion-checkbox>Sin contacto</ion-checkbox>
+          </ion-chip>
+        </div>
+      </div>
+      <div class="filter-section">
+        <ion-label position="stacked">Periodo</ion-label>
+        <div style="display: flex; flex-wrap: wrap;">
+          <ion-chip>Menor a </ion-chip>
+          <ion-chip>Mayor a</ion-chip>
+        </div>
+      </div>
     </ion-content>
   </ng-template>
 </ion-modal>

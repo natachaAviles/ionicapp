@@ -1,0 +1,27 @@
+.filter-section {
+  background-color: aliceblue;
+  padding: 10px;
+  border-radius: 20px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
+  ion-label {
+    color: #025373;
+  }
+}
+
+ion-chip {
+  --background: white;
+  --color: #025373;
+  border: 1px solid #025373;
+}
+
+ion-checkbox {
+  --size: 20px;
+  --checkbox-background-checked: #025373;
+}
+
+ion-checkbox::part(container) {
+  border-radius: 6px;
+  border: 2px solid #025373;
+}

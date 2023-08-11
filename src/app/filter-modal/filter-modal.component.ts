@@ -13,7 +13,7 @@ import { OverlayEventDetail } from '@ionic/core/components';
 export class FilterModalComponent  implements OnInit {
   @ViewChild(IonModal) modal?: IonModal;
   name?: string;
-  message = 'This modal example uses triggers to automatically open a modal when the button is clicked.';
+  message = '';
 
   constructor(private modalController: ModalController) { }
 
