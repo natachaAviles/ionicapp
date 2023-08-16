@@ -1,15 +1,24 @@
 <ion-content [fullscreen]="true">
   <ion-header>
     <ion-toolbar>
+      <ion-buttons>
+        <ion-menu-button color="light" auto-hide="chevron-back-outline"></ion-menu-button>
+      </ion-buttons>
       <ion-title>Ingreso de acción</ion-title>
     </ion-toolbar>
   </ion-header>
   <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Juan José Perez Gomez</ion-card-subtitle>
-    </ion-card-header>
+    <ion-item lines="none">
+      <ion-card-subtitle slot="start">Juan José Perez Gomez</ion-card-subtitle>
+      <ion-fab-button slot="end" size="small" style="display: inline;">
+        <ion-icon name="call-outline"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button slot="end" size="small" style="display: inline;">
+        <ion-icon name="add-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-item>
     <ion-card-content>
-      <ion-segment [(ngModel)]="selectedSegment" mode="ios" color="tertiary" style="margin-bottom: 10px;">
+      <ion-segment [(ngModel)]="selectedSegment" mode="ios" value="all" color="tertiary" style="margin-bottom: 10px;">
         <ion-segment-button value="feedback">
           <ion-label>Feedback</ion-label>
         </ion-segment-button>
@@ -31,35 +40,24 @@
       </ion-item>
       <ion-item>
         <ion-select label="Estado de gestión" label-placement="stacked">
-          <ion-select-option value="apple">Apple</ion-select-option>
-          <ion-select-option value="banana">Banana</ion-select-option>
-          <ion-select-option value="orange">Orange</ion-select-option>
+          <ion-select-option value="apple">Abierto</ion-select-option>
+          <ion-select-option value="banana">Cerrado</ion-select-option>
+          <ion-select-option value="orange">Cerrado sin gestión</ion-select-option>
+          <ion-select-option value="orange">Cerrado sin contacto</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>
         <ion-select label="Etiqueta de gestión" [multiple]="true" label-placement="stacked">
-          <ion-select-option value="apples">Apples</ion-select-option>
-          <ion-select-option value="oranges">Oranges</ion-select-option>
-          <ion-select-option value="bananas">Bananas</ion-select-option>
+          <ion-select-option value="apples">Etiqueta 1</ion-select-option>
+          <ion-select-option value="oranges">Etiqueta 2</ion-select-option>
+          <ion-select-option value="bananas">Etiqueta 3</ion-select-option>
         </ion-select>
       </ion-item>
+      <ion-grid>
+        <ion-row class="ion-justify-content-center">
+          <ion-button shape="round" expand="block">Guardar</ion-button>
+        </ion-row>
+      </ion-grid>
     </ion-card-content>
-    <ion-button expand="block">Guardar</ion-button>
   </ion-card>
 </ion-content>
-<ion-footer>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon name="list-outline"></ion-icon>
-        <ion-label>Gestiones</ion-label>
-      </ion-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="file-tray-full-outline"></ion-icon>
-        <ion-label>Bandeja de entrada</ion-label>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>
