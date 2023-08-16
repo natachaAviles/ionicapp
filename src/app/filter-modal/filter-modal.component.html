@@ -3,16 +3,26 @@
     <ion-header>
       <ion-toolbar>
         <ion-buttons slot="start">
-          <ion-button (click)="cancel()">Cancel</ion-button>
+          <ion-button color="light" (click)="cancel()">Cancelar</ion-button>
         </ion-buttons>
         <ion-title>Filtrar</ion-title>
         <ion-buttons slot="end">
-          <ion-button (click)="confirm()" [strong]="true">Confirm</ion-button>
+          <ion-button color="light" (click)="confirm()" [strong]="true">Confirmar</ion-button>
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
-    <ion-content class="ion-padding">
-      <div class="filter-section">
+    <ion-content>
+      <ion-card>
+        <ion-label>Fecha de encuesta</ion-label>
+          <ion-datetime-button color="tertiary" presentation="date" datetime="date"></ion-datetime-button>
+
+          <ion-modal [keepContentsMounted]="true">
+            <ng-template>
+              <ion-datetime presentation="date" id="date" [showDefaultButtons]="true"></ion-datetime>
+          </ng-template>
+        </ion-modal>
+      </ion-card>
+      <ion-card>
         <ion-label position="stacked">Ordenar</ion-label>
         <div style="display: flex; flex-wrap: wrap;">
           <ion-chip>
@@ -22,15 +32,15 @@
             <ion-checkbox>Más antiguos</ion-checkbox>
           </ion-chip>
         </div>
-      </div>
-      <div class="filter-section">
+      </ion-card>
+      <ion-card>
         <ion-label position="stacked">Nota</ion-label>
         <div style="display: flex; flex-wrap: wrap;">
           <ion-chip>Menor o igual a </ion-chip>
           <ion-chip>Mayor o igual a</ion-chip>
         </div>
-      </div>
-      <div class="filter-section">
+      </ion-card>
+      <ion-card>
         <ion-label position="stacked">Estado de gestión</ion-label>
         <div style="display: flex; flex-wrap: wrap;">
           <ion-chip>
@@ -48,14 +58,17 @@
             <ion-checkbox>Sin contacto</ion-checkbox>
           </ion-chip>
         </div>
-      </div>
-      <div class="filter-section">
+      </ion-card>
+      <ion-card>
         <ion-label position="stacked">Periodo</ion-label>
-        <div style="display: flex; flex-wrap: wrap;">
-          <ion-chip>Menor a </ion-chip>
-          <ion-chip>Mayor a</ion-chip>
-        </div>
-      </div>
+        <ion-item>
+          <ion-select>
+            <ion-select-option value="Ultimo mes movil">Ultimo mes movil</ion-select-option>
+            <ion-select-option value="banana">Banana</ion-select-option>
+            <ion-select-option value="orange">Orange</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-card>
     </ion-content>
   </ng-template>
 </ion-modal>
