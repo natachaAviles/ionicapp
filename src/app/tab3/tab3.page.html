@@ -1,17 +1,31 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true">  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Estado de gestión</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #doughnutCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>NPS mes anterior</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-subtitle>Mes: Junio</ion-card-subtitle>
+      <ion-card-subtitle>N° total: 1200</ion-card-subtitle>
+      <ion-card-subtitle>NPS: 57</ion-card-subtitle>
+      <canvas #barCanvas></canvas>
+    </ion-card-content>
+  </ion-card>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Nivel: 2</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #lineCanvas  height="700"></canvas>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
