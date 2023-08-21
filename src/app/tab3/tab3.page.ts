@@ -64,18 +64,18 @@ export class Tab3Page {
       data: {
           labels: ["Junio"],
           datasets: [{
-              data: [10],
-              label: 'Promotor',
-              backgroundColor:  'rgba(75, 192, 192, 0.9)',
+            data: [15],
+            label: 'Detractor',
+            backgroundColor: "rgba(255, 99, 132, 0.9)",
           },{
               data: [15],
               label: 'Pasivo',
               backgroundColor: 'rgba(255, 205, 86, 0.9)',
           },{
-              data: [15],
-              label: 'Detractor',
-              backgroundColor: "rgba(255, 99, 132, 0.9)",
-          }]
+            data: [10],
+            label: 'Promotor',
+            backgroundColor:  'rgba(75, 192, 192, 0.9)',
+        }]
       },
     })
   }

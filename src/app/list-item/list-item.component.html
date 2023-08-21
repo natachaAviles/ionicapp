@@ -1,16 +1,14 @@
 <div [ngClass]="{'success': isSuccess, 'warning': isWarning, 'error': isError, 'disabled': status === 'Resuelto'}">
   <ion-item lines="full">
     <ion-thumbnail class="loyalink-score">
-      <div>
-        {{ score }}
-      </div>
-      <span class="loyalink-label">{{ status }}</span>
+      {{ score }}
     </ion-thumbnail>
     <ion-label>
       <h3>{{ name }}</h3>
       <p>{{ type }} - {{ date }}</p>
       <p>{{ comment }}</p>
     </ion-label>
+    <ion-chip slot="end"  color="tertiary">{{ status }}</ion-chip>
     <ion-icon 
       [name]="isFavorite ? 'star' : 'star-outline'" 
       size="medium" 

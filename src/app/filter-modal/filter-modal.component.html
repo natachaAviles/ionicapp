@@ -25,12 +25,10 @@
       <ion-card>
         <ion-label position="stacked">Ordenar</ion-label>
         <div style="display: flex; flex-wrap: wrap;">
-          <ion-chip>
-            <ion-checkbox>Más recientes</ion-checkbox>
-          </ion-chip>
-          <ion-chip>
-            <ion-checkbox>Más antiguos</ion-checkbox>
-          </ion-chip>
+          <ion-radio-group value="custom-checked">
+            <ion-radio value="custom" aria-label="Custom checkbox">Más recientes</ion-radio>
+            <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked">Más antiguos</ion-radio>
+          </ion-radio-group>
         </div>
       </ion-card>
       <ion-card>
@@ -58,16 +56,6 @@
             <ion-checkbox>Sin contacto</ion-checkbox>
           </ion-chip>
         </div>
-      </ion-card>
-      <ion-card>
-        <ion-label position="stacked">Periodo</ion-label>
-        <ion-item>
-          <ion-select>
-            <ion-select-option value="Ultimo mes movil">Ultimo mes movil</ion-select-option>
-            <ion-select-option value="banana">Banana</ion-select-option>
-            <ion-select-option value="orange">Orange</ion-select-option>
-          </ion-select>
-        </ion-item>
       </ion-card>
     </ion-content>
   </ng-template>
