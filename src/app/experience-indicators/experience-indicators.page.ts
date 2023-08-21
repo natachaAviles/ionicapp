@@ -4,13 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { Chart } from 'chart.js/auto'
+import { SearchbarComponent } from '../searchbar/searchbar.component';
 
 @Component({
   selector: 'app-experience-indicators',
   templateUrl: './experience-indicators.page.html',
   styleUrls: ['./experience-indicators.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule]
+  imports: [IonicModule, CommonModule, FormsModule, SearchbarComponent]
 })
 export class ExperienceIndicatorsPage {
   @ViewChild('barCanvas') barCanvas: ElementRef | undefined;
