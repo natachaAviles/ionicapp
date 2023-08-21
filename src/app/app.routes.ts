@@ -17,4 +17,8 @@ export const routes: Routes = [
     path: 'detail-managment',
     loadComponent: () => import('./detail-managment/detail-managment.page').then( m => m.DetailManagmentPage)
   },
+  {
+    path: 'experience-indicators',
+    loadComponent: () => import('./experience-indicators/experience-indicators.page').then( m => m.ExperienceIndicatorsPage)
+  },
 ];
