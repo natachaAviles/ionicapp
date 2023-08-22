@@ -1,6 +1,6 @@
-<ion-content [fullscreen]="true">
-  <div style="display: flex; justify-content: center;">
-    <div style="width: 80%">
+<ion-header>
+  <div class="segment-container">
+    <div>
       <ion-segment mode="ios" value="all">
         <ion-segment-button value="all">
           Mis casos
@@ -14,6 +14,9 @@
       </ion-segment>
     </div>
   </div>
+</ion-header>
+
+<ion-content [fullscreen]="true">
   <ion-list>
     <app-list-item 
       [isWarning]="true" 
@@ -117,6 +120,42 @@
       [comment]="'Comentario placeholder'"
       [id]="9"
     >
-    </app-list-item>      
+    </app-list-item>
+        <app-list-item 
+        [isSuccess]="true"
+        [isFavorite]="true" 
+        [status]="'En curso'" 
+        [score]="'6'"
+        [name]="'Elizabeth Park...'"
+        [type]="'Pasivo'"
+        [date]="'23/08/2023'"
+        [comment]="'Comentario placeholder'"
+        [id]="9"
+      >
+      </app-list-item>   
+      <app-list-item 
+      [isSuccess]="true"
+      [isFavorite]="true" 
+      [status]="'En curso'" 
+      [score]="'6'"
+      [name]="'Elizabeth Park...'"
+      [type]="'Pasivo'"
+      [date]="'23/08/2023'"
+      [comment]="'Comentario placeholder'"
+      [id]="9"
+    >
+    </app-list-item>   
+    <app-list-item 
+    [isSuccess]="true"
+    [isFavorite]="true" 
+    [status]="'En curso'" 
+    [score]="'6'"
+    [name]="'Elizabeth Park...'"
+    [type]="'Pasivo'"
+    [date]="'23/08/2023'"
+    [comment]="'Comentario placeholder'"
+    [id]="9"
+    >
+    </app-list-item>         
   </ion-list>
 </ion-content>

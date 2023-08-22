@@ -17,6 +17,28 @@ export class ItemDetailPage implements OnInit {
   selectedSegment: string = 'feedback';
   component = TabsPage;
 
+  public actionSheetButtons = [
+    {
+      text: 'Telefono 2',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Telefono 2',
+      data: {
+        action: 'share',
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+      data: {
+        action: 'cancel',
+      },
+    },
+  ];
+
   constructor() { }
   ngOnInit() {}
 

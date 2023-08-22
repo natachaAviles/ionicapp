@@ -3,29 +3,26 @@ ion-toolbar {
   --color: white;
 }
 
-ion-footer {
-  box-shadow: rgba(99, 99, 99, 0.2) 0px -9px 10px 0px;
+.save {
+  --background: #011c40;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
 }
 
-ion-button {
+.action-button {
+  margin: 0;
+  --border-color: #2cb1bf;
+  --color: #2cb1bf;
+
   ion-icon {
     margin-left: 10px;
   }
 }
 
 .save {
-  --background: #011c40;
-  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  margin-top: 20px;
 }
 
-ion-fab-button::part(native) {
-  background-color: #2cb1bf;
-}
-
-ion-fab-button::part(native):hover::after {
-  background-color: #2c84bf;
-}
-
-ion-fab-button::part(native):active::after {
-  background-color: #2c84bf;
+ion-segment {
+  --background: #2cb1bf5e;
+  margin-bottom: 14px;
 }

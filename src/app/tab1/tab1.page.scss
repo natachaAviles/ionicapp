@@ -6,4 +6,15 @@ ion-item {
 ion-segment {
   --background: #2cb1bf5e;
   margin-bottom: 14px;
+  margin-top: 10px;
+}
+
+.segment-container {
+  display: flex; 
+  justify-content: center;
+  background-color: white;
+
+  div {
+    width: 80%;
+  }
 }

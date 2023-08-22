@@ -11,3 +11,18 @@ ion-badge {
   --background: #a9eec1;
   --color: #249d58;
 }
+
+ion-card-subtitle {
+  color: #011c40;
+
+  span {
+    text-transform: initial;
+    font-weight: normal;
+    font-size: 14px;
+    color: #666666;
+  }
+}
+
+ion-chip {
+  border: 1px dashed;
+}
