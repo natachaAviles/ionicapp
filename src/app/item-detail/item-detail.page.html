@@ -1,22 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="light"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Ingresar acción</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon color="light" name="create-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
 <ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons>
-        <ion-menu-button color="light" auto-hide="chevron-back-outline"></ion-menu-button>
-      </ion-buttons>
-      <ion-title>Ingreso de acción</ion-title>
-    </ion-toolbar>
-  </ion-header>
   <ion-card>
-    <ion-item lines="none">
-      <ion-card-subtitle slot="start">Juan José Perez Gomez</ion-card-subtitle>
-      <ion-fab-button slot="end" size="small" style="display: inline;">
-        <ion-icon name="call-outline"></ion-icon>
-      </ion-fab-button>
-      <ion-fab-button slot="end" size="small" style="display: inline;">
-        <ion-icon name="add-outline"></ion-icon>
-      </ion-fab-button>
-    </ion-item>
     <ion-card-content>
       <ion-segment [(ngModel)]="selectedSegment" mode="ios" value="all" color="tertiary" style="margin-bottom: 10px;">
         <ion-segment-button value="feedback">
@@ -28,6 +25,22 @@
       </ion-segment>
       <app-enter-action-info [selectedSegment]="selectedSegment"></app-enter-action-info>
     </ion-card-content>
+    <ion-footer>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button color="light"  expand="block" [routerLink]="['/detail-managment']">
+            Ver gestión
+            <ion-icon name="list-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button color="light" expand="block">
+            Hacer llamada
+            <ion-icon name="call-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-footer>
   </ion-card>
 
   <ion-card>
@@ -53,11 +66,7 @@
           <ion-select-option value="bananas">Etiqueta 3</ion-select-option>
         </ion-select>
       </ion-item>
-      <ion-grid>
-        <ion-row class="ion-justify-content-center">
-          <ion-button shape="round" expand="block">Guardar</ion-button>
-        </ion-row>
-      </ion-grid>
+      <ion-button class="save" shape="round" expand="block">Guardar</ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

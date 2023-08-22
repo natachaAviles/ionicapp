@@ -10,6 +10,14 @@ ion-list {
   height: 100%;
 }
 
+ion-card {
+  margin: 0 0 16px 0;
+
+  ion-avatar {
+    margin-bottom: 20px;
+  }
+}
+
 ion-item {
   --ripple-color: #2cb1bf;
   --border-color: #2cb1bf;
@@ -22,8 +30,13 @@ ion-item {
 .logout {
   --border-color:#dd2f30;
   --ripple-color: #f5a9aa;
+  --color: #dd2f30;
 
   position: absolute; 
   bottom: 0;
   width: 100%;
+
+  ion-icon {
+    color: #dd2f30;
+  }
 }

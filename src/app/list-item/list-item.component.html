@@ -1,5 +1,5 @@
 <div [ngClass]="{'success': isSuccess, 'warning': isWarning, 'error': isError, 'disabled': status === 'Resuelto'}">
-  <ion-item lines="full">
+  <ion-item lines="full" [routerLink]="['/item-detail']">
     <ion-thumbnail class="loyalink-score">
       {{ score }}
     </ion-thumbnail>
