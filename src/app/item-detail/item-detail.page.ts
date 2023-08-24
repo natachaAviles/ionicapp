@@ -19,7 +19,7 @@ export class ItemDetailPage implements OnInit {
 
   public actionSheetButtons = [
     {
-      text: 'Telefono 2',
+      text: 'Telefono 1',
       data: {
         action: 'share',
       },
