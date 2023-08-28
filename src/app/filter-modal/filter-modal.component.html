@@ -13,42 +13,58 @@
     </ion-header>
     <ion-content>
       <ion-card>
+       <div class="filter-container">
         <ion-label>Fecha de encuesta</ion-label>
-          <ion-datetime-button color="tertiary" presentation="date" datetime="date"></ion-datetime-button>
+        <ion-datetime-button color="primary" presentation="date" datetime="date"></ion-datetime-button>
+       </div>
+       <ion-radio-group  class="filter-container" value="custom-checked">
+        <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Fecha de interacción</ion-radio>
+        <ion-radio labelPlacement="end" value="custom-checked" aria-label="Custom checkbox that is checked">Fecha de encuesta</ion-radio>
+        </ion-radio-group>
 
           <ion-modal [keepContentsMounted]="true">
             <ng-template>
-              <ion-datetime presentation="date" id="date" [showDefaultButtons]="true"></ion-datetime>
+              <ion-datetime 
+                mode="ios" 
+                presentation="date" 
+                id="date" 
+                [showDefaultButtons]="true" 
+                doneText="Listo" 
+                cancelText="Cancelar">
+              </ion-datetime>
           </ng-template>
         </ion-modal>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Ordenar</ion-label>
-        <div style="display: flex; flex-wrap: wrap;">
-          <ion-radio-group value="custom-checked">
-            <ion-radio value="custom" aria-label="Custom checkbox">Más recientes</ion-radio>
-            <ion-radio value="custom-checked" aria-label="Custom checkbox that is checked">Más antiguos</ion-radio>
-          </ion-radio-group>
-        </div>
+        <ion-radio-group  class="filter-container" value="custom-checked">
+          <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Más recientes</ion-radio>
+          <ion-radio labelPlacement="end" value="custom-checked" aria-label="Custom checkbox that is checked">Más antiguos</ion-radio>
+        </ion-radio-group>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Nota</ion-label>
-        <div style="display: flex; flex-wrap: wrap;">
-          <ion-chip>Menor o igual a </ion-chip>
-          <ion-chip>Mayor o igual a</ion-chip>
-        </div>
+        <ion-range 
+            mode="ios"
+            aria-label="Dual Knobs Range" 
+            [dualKnobs]="true" 
+            [ticks]="true" 
+            [snaps]="true" 
+            [min]="1" 
+            [max]="10"
+            [pin]="true"
+            value="2"
+          ></ion-range>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Estado de gestión</ion-label>
-        <div style="display: flex; flex-wrap: wrap;">
+        <div class="filter-container">
           <ion-chip>
             <ion-checkbox>Abiertos</ion-checkbox>
           </ion-chip>
           <ion-chip>
             <ion-checkbox>Cerrados</ion-checkbox>
           </ion-chip>
-        </div>
-        <div style="display: flex;">
           <ion-chip>
             <ion-checkbox>Sin gestión</ion-checkbox>
           </ion-chip>

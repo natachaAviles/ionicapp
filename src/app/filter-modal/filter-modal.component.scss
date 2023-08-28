@@ -1,3 +1,10 @@
+.filter-container {
+  display: flex; 
+  flex-wrap: wrap;
+  margin-top: 14px;
+  gap: 10px;
+}
+
 ion-card {
   padding: 10px;
 }
@@ -9,34 +16,34 @@ ion-datetime-button {
 
 ion-chip {
   --background: white;
-  --color: #2cb1bf;
-  border: 1px solid #2cb1bf;
+  --color: #666;
+  border: 1px solid #ddd;
 }
 
 ion-checkbox {
-  --size: 20px;
-  --checkbox-background-checked: #2cb1bf;
+  --size: 23px;
+  --checkbox-background-checked: #021c40;
+  --border-color-checked: #021c40;
 }
 
 ion-radio {
   background-color: white;
-  border: 1px solid #2cb1bf;
-  padding: 0 10px;
+  border: 1px solid #ddd;
+  padding: 0 11px 0 2px;
   height: 32px;
   border-radius: 20px;
 }
 
 ion-checkbox::part(container) {
-  border-radius: 6px;
-  border: 2px solid #2cb1bf;
+  border-radius: 4px;
 }
 
 ion-radio::part(container) {
-  width: 20px;
-  height: 20px;
-
-  border-radius: 5px;
+  width: 26px;
+  height: 26px;
+  border-radius: 20px;
   border: 1px solid #ddd;
+  margin-bottom: 2px;
 }
 
 ion-radio::part(mark) {
@@ -47,17 +54,50 @@ ion-radio::part(mark) {
 }
 
 ion-radio.radio-checked::part(container) {
-  background: #2cb1bf;
-  border-color: transparent;
+  background: #021c40;
 }
 
 ion-radio.radio-checked::part(mark) {
   width: 6px;
-  height: 10px;
+  height: 12px;
 
-  border-width: 0px 2px 2px 0px;
+  border-width: 0px 1px 1px 0px;
   border-style: solid;
-  border-color: #fff;
+  border-color: white;
 
   transform: rotate(45deg);
+}
+
+ion-datetime-button::part(native) {
+  background: white;
+  border: 1px solid #021c40;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+// range
+ion-range {
+  --bar-background: #ddd;
+  --bar-background-active: #021c40;
+  --bar-border-radius: 8px;
+  --knob-background: white;
+  --knob-size: 28px;
+}
+
+ion-range::part(pin) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #2cb1bf;
+  color: white;
+  border-radius: 50px;
+  transform: scale(1.01);
+  top: -12px;
+  width: 20px;
+  height: 20px;
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+ion-range {
+  margin-right: 15px;
+  margin-left: 15px;
 }
