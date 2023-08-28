@@ -10,8 +10,7 @@ ion-card {
 }
 
 ion-datetime-button {
-  display: inline-block;
-  margin-left: 96px;
+  margin-top: 14px;
 }
 
 ion-chip {
@@ -72,6 +71,7 @@ ion-datetime-button::part(native) {
   background: white;
   border: 1px solid #021c40;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  width: 100%;
 }
 
 // range
