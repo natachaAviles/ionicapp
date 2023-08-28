@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IonicModule, IonModal } from '@ionic/angular';
+import { IonicModule, IonModal, MenuController } from '@ionic/angular';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
 import { OverlayEventDetail } from '@ionic/core/components';
 
@@ -11,8 +11,24 @@ import { OverlayEventDetail } from '@ionic/core/components';
   standalone: true,
 })
 export class SearchbarComponent  implements OnInit {
-  constructor() {}
+  constructor(private menuCtrl: MenuController) {}
+  ngOnInit(): void {}
 
-  ngOnInit() {}
+  openFirstMenu() {
+    // Open the menu by menu-id
+    this.menuCtrl.enable(true, 'first-menu');
+    this.menuCtrl.open('first-menu');
+  }
+
+  openSecondMenu() {
+    // Open the menu by menu-id
+    this.menuCtrl.enable(true, 'second-menu');
+    this.menuCtrl.open('second-menu');
+  }
+
+  openEndMenu() {
+    // Open the menu by side
+    this.menuCtrl.open('end');
+  }
 
 }
