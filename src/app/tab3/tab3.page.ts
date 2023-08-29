@@ -3,6 +3,29 @@ import { IonicModule } from '@ionic/angular';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 import {Chart} from 'chart.js/auto'
+
+const stateColors = {
+  'CERRADO SIN GESTION': {
+    'default': 'rgb(230, 122, 119)',
+    'hover': 'rgb(255, 147, 144)'
+  },
+  'CERRADO SIN CONTACTO': {
+    'default': 'rgb(128, 128, 128)',
+    'hover': 'rgb(153, 153, 153)'
+  },
+  'CERRADO': {
+    'default': 'rgb(121, 209, 207)',
+    'hover': 'rgb(146, 234, 232)'
+  },
+  'EN CURSO': {
+    'default': 'rgb(95, 222, 239)',
+    'hover': 'rgb(120, 247, 255)'
+  },
+  'ABIERTA': {
+    'default': 'rgb(0, 112, 192)',
+    'hover': 'rgb(25, 137, 217)'
+  }
+}
 @Component({
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
@@ -25,16 +48,17 @@ export class Tab3Page {
     this.doughnutChart = new Chart(this.doughnutCanvas?.nativeElement, {
       type: 'pie',
       data: {
-        labels: ['Abierto', 'En curso', 'Cerrado', 'Cerrado sin contacto'],
+        labels: ['Abierto', 'En curso', 'Cerrado', 'Cerrado sin contacto', 'Cerrado sin gestión'],
         datasets: [
           {
             label: '# of Votes',
             data: [50, 29, 15, 10, 7],
             backgroundColor: [
-              'rgb(255, 159, 64)',
-              'rgb(255, 99, 132)',
-              'rgb(54, 162, 235)',
-              'rgb(255, 206, 86)',
+              stateColors['ABIERTA']['default'],
+              stateColors['EN CURSO']['default'],
+              stateColors['CERRADO']['default'],
+              stateColors['CERRADO SIN CONTACTO']['default'],
+              stateColors['CERRADO SIN GESTION']['default']
             ]
           },
         ],

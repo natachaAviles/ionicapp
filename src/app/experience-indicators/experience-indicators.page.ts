@@ -6,6 +6,12 @@ import { IonicModule } from '@ionic/angular';
 import { Chart } from 'chart.js/auto'
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 
+const scoreColors = {
+  'DETRACTOR': 'rgb(230, 122, 119)',
+  'PASIVO': 'rgb(255, 223, 124)',
+  'PROMOTOR': 'rgb(121, 209, 207)'
+}
+
 @Component({
   selector: 'app-experience-indicators',
   templateUrl: './experience-indicators.page.html',
@@ -13,6 +19,7 @@ import { SearchbarComponent } from '../searchbar/searchbar.component';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule, SearchbarComponent]
 })
+
 export class ExperienceIndicatorsPage {
   @ViewChild('barCanvas') barCanvas: ElementRef | undefined;
   @ViewChild('lineCanvas') lineCanvas: ElementRef | undefined;
@@ -46,15 +53,15 @@ export class ExperienceIndicatorsPage {
           datasets: [{
             data: [15],
             label: 'Detractor',
-            backgroundColor: "rgba(255, 99, 132, 0.9)",
+            backgroundColor: scoreColors['DETRACTOR'],
           },{
               data: [15],
               label: 'Pasivo',
-              backgroundColor: 'rgba(255, 205, 86, 0.9)',
+              backgroundColor: scoreColors['PASIVO'],
           },{
             data: [10],
             label: 'Promotor',
-            backgroundColor:  'rgba(75, 192, 192, 0.9)',
+            backgroundColor:  scoreColors['PROMOTOR'],
         }]
       },
     })

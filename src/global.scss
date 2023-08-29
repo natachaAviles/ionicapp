@@ -29,6 +29,29 @@
 @import "primeng/resources/primeng.css";
 @import "node_modules/primeng/resources/primeng.min.css";
 
+$state-colors: (
+  'CERRADO SIN GESTIÓN': (
+    'default': rgb(230, 122, 119),
+    'hover': rgb(255, 147, 144)
+  ),
+  'CERRADO SIN CONTACTO': (
+    'default': rgb(128, 128, 128),
+    'hover': rgb(153, 153, 153)
+  ),
+  'CERRADO': (
+    'default': rgb(121, 209, 207),
+    'hover': rgb(146, 234, 232)
+  ),
+  'EN CURSO': (
+    'default': rgb(95, 222, 239),
+    'hover': rgb(120, 247, 255)
+  ),
+  'ABIERTA': (
+    'default': rgb(0, 112, 192),
+    'hover': rgb(25, 137, 217)
+  )
+);
+
 ion-searchbar {
   .searchbar-input-container {
     .searchbar-input{

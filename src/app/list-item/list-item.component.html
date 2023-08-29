@@ -1,4 +1,4 @@
-<div [ngClass]="{'success': isSuccess, 'warning': isWarning, 'error': isError, 'disabled': status === 'Resuelto'}">
+<div [ngClass]="{'success': isSuccess, 'warning': isWarning, 'error': isError, 'disabled': status === 'CERRADO' || status === 'CERRADO SIN GESTION' || status === 'CERRADO SIN CONTACTO'}">
   <ion-item lines="full" [routerLink]="['/item-detail']" detail="false">
     <ion-thumbnail class="loyalink-score">
       {{ score }}
@@ -8,7 +8,7 @@
       <p>{{ type }} - {{ date }}</p>
       <p>{{ comment }}</p>
     </ion-label>
-    <ion-chip slot="end"  color="tertiary">{{ status }}</ion-chip>
+    <ion-chip [style.border-color]="status ? stateColors[status]['default'] : ''" slot="end">{{ status }}</ion-chip>
     <ion-icon 
       [name]="isFavorite ? 'star' : 'star-outline'" 
       size="medium" 

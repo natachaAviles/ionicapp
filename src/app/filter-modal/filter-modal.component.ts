@@ -4,7 +4,6 @@ import { OverlayEventDetail } from '@ionic/core/components';
 
 import { NodeService } from '../nodeservice';
 import { MessageService } from 'primeng/api';
-import { trigger, state, style, animate, transition } from '@angular/animations';
 
 import { TreeSelectModule } from 'primeng/treeselect';
 import { FormsModule } from '@angular/forms';
