@@ -25,7 +25,6 @@ export class FilterModalComponent  implements OnInit {
 
   nodes!: any[];
   selectedNodes: any;
-  
 
   constructor(private modalController: ModalController, public nodeService: NodeService) { }
 
