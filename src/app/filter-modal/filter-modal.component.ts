@@ -2,12 +2,20 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule, ModalController, IonModal  } from '@ionic/angular';
 import { OverlayEventDetail } from '@ionic/core/components';
 
+import { NodeService } from '../nodeservice';
+import { MessageService } from 'primeng/api';
+import { trigger, state, style, animate, transition } from '@angular/animations';
+
+import { TreeSelectModule } from 'primeng/treeselect';
+import { FormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-filter-modal',
   templateUrl: './filter-modal.component.html',
   styleUrls: ['./filter-modal.component.scss'],
-  imports: [IonicModule],
+  imports: [IonicModule, TreeSelectModule, FormsModule],
   standalone: true,
+  providers: [MessageService]
 })
 
 export class FilterModalComponent  implements OnInit {
@@ -15,7 +23,11 @@ export class FilterModalComponent  implements OnInit {
   name?: string;
   message = '';
 
-  constructor(private modalController: ModalController) { }
+  nodes!: any[];
+  selectedNodes: any;
+  
+
+  constructor(private modalController: ModalController, public nodeService: NodeService) { }
 
   cancel() {
     this.modalController.dismiss();
@@ -32,6 +44,7 @@ export class FilterModalComponent  implements OnInit {
     }
   }
 
-  ngOnInit() {}
-
+  ngOnInit() {
+    this.nodeService.getFiles().then(files => this.nodes = files);
+  }
 }

@@ -16,8 +16,8 @@
         <ion-label>Fecha de encuesta</ion-label>
         <ion-datetime-button color="primary" presentation="date" datetime="date"></ion-datetime-button>
         <ion-radio-group  class="filter-container" value="custom-checked">
-        <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Fecha de interacción</ion-radio>
-        <ion-radio labelPlacement="end" value="custom-checked" aria-label="Custom checkbox that is checked">Fecha de encuesta</ion-radio>
+        <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Periodo de interacción</ion-radio>
+        <ion-radio labelPlacement="end" value="custom-checked" aria-label="Custom checkbox that is checked">Periodo de encuesta</ion-radio>
         </ion-radio-group>
 
           <ion-modal [keepContentsMounted]="true">
@@ -70,6 +70,10 @@
             <ion-checkbox>Sin contacto</ion-checkbox>
           </ion-chip>
         </div>
+      </ion-card>
+      <ion-card>
+        <ion-label position="stacked">Puntos de contacto</ion-label>
+        <p-tree [value]="nodes" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
       </ion-card>
     </ion-content>
   </ng-template>

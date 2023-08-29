@@ -25,6 +25,10 @@
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
 
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+@import "node_modules/primeng/resources/primeng.min.css";
+
 ion-searchbar {
   .searchbar-input-container {
     .searchbar-input{
@@ -59,4 +63,35 @@ ion-card {
 
 ion-action-sheet.action-sheet .action-sheet-title {
   color: #011c40;
+}
+
+.p-tree {
+  margin-top: 14px;
+}
+
+.p-treenode-content {
+  height: 40px;
+}
+
+.p-treeselect.p-treeselect-chip .p-treeselect-token {
+  height: 20px;
+}
+
+.p-treeselect-label {
+  display: flex;
+  flex-flow: wrap;
+  gap: 5px;
+}
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight {
+  background: #2eb0c14a;
+  color: #021c40;
+}
+
+.p-checkbox .p-checkbox-box.p-highlight, .p-checkbox:not(.p-checkbox-disabled) .p-checkbox-box.p-highlight:hover {
+  border-color: #021c40;
+  background: #021c40;
+}
+
+.p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-tree-toggler, .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-treenode-icon {
+  color: #021c40;
 }

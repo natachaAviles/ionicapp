@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { IonicModule, IonModal, MenuController } from '@ionic/angular';
 import { FilterModalComponent } from '../filter-modal/filter-modal.component';
-import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-searchbar',
