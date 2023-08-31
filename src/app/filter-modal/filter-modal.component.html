@@ -72,6 +72,20 @@
         </div>
       </ion-card>
       <ion-card>
+        <ion-label position="stacked">Etiquetas de gestión</ion-label>
+        <div class="filter-container">
+          <ion-chip>
+            <ion-checkbox>Etiqueta 1</ion-checkbox>
+          </ion-chip>
+          <ion-chip>
+            <ion-checkbox>Etiqueta 2</ion-checkbox>
+          </ion-chip>
+          <ion-chip>
+            <ion-checkbox>Etiqueta 3</ion-checkbox>
+          </ion-chip>
+        </div>
+      </ion-card>
+      <ion-card>
         <ion-label position="stacked">Puntos de contacto</ion-label>
         <p-tree [value]="nodes" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
       </ion-card>
