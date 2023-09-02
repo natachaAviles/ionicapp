@@ -68,6 +68,18 @@ ion-chip {
   position: relative;
   top: -18px;
   text-transform: lowercase;
-  border: 1px dashed;
+  border: 1px solid;
   background-color: white;
+  padding-left: 0;
+  padding-right: 6px;
+  margin: 2px;
+  margin-right: 6px;
+}
+
+.chip-circle {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin-right: 4px;
+  margin-left: 4px;
 }

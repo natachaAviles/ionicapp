@@ -8,7 +8,10 @@
       <p>{{ type }} - {{ date }}</p>
       <p>{{ comment }}</p>
     </ion-label>
-    <ion-chip [style.border-color]="status ? stateColors[status]['default'] : ''" slot="end">{{ status }}</ion-chip>
+    <ion-chip [style.border-color]="status ? stateColors[status]['default'] : ''" slot="end">
+      <div [style.background-color]="status ? stateColors[status]['default'] : ''" class="chip-circle"></div>
+      {{ status }}
+    </ion-chip>
     <ion-icon 
       [name]="isFavorite ? 'star' : 'star-outline'" 
       size="medium" 
