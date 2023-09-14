@@ -22,13 +22,16 @@
 
           <ion-modal [keepContentsMounted]="true">
             <ng-template>
-              <ion-datetime 
+              <ion-datetime
+                [multiple]="true"
                 mode="ios" 
                 presentation="date" 
                 id="date" 
                 [showDefaultButtons]="true" 
                 doneText="Listo" 
-                cancelText="Cancelar">
+                cancelText="Cancelar"
+                [value]="['2022-06-03', '2022-06-13', '2022-06-29']"
+                >
               </ion-datetime>
           </ng-template>
         </ion-modal>
@@ -84,6 +87,10 @@
             <ion-checkbox>Etiqueta 3</ion-checkbox>
           </ion-chip>
         </div>
+      </ion-card>
+      <ion-card>
+        <ion-label position="stacked">Segmentos</ion-label>
+        <p-tree [value]="nodes" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Puntos de contacto</ion-label>

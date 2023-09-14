@@ -18,6 +18,10 @@
     <ion-button id="open-modal" class="filter" size="small" fill="clear">
       <ion-icon name="filter-outline"></ion-icon>
     </ion-button>
+    <ion-button id="open-picker" size="small" class="fast" fill="clear">
+      <ion-icon name="flash-outline"></ion-icon>
+    </ion-button>
+    <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
   </div>
   <app-filter-modal></app-filter-modal>
 </div>

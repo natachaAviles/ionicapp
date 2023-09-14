@@ -9,3 +9,15 @@
 ion-toolbar {
   --background: #011634;
 }
+
+.block {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  background-color: #011c40;
+  color: white;
+}
+
+ion-modal {
+  --height: auto;
+}

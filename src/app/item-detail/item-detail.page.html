@@ -1,7 +1,7 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button color="light"></ion-back-button>
+      <ion-back-button text="Atrás" color="light"></ion-back-button>
     </ion-buttons>
     <ion-title>Ingresar acción</ion-title>
     <ion-buttons slot="end">
@@ -51,9 +51,6 @@
     </ion-card-header>
     <ion-card-content>
       <ion-item>
-        <ion-input label="Comentario de gestión" labelPlacement="stacked"></ion-input>
-      </ion-item>
-      <ion-item>
         <ion-select label="Estado de gestión" label-placement="stacked">
           <ion-select-option value="apple">Abierto</ion-select-option>
           <ion-select-option value="banana">Cerrado</ion-select-option>
@@ -67,6 +64,9 @@
           <ion-select-option value="oranges">Etiqueta 2</ion-select-option>
           <ion-select-option value="bananas">Etiqueta 3</ion-select-option>
         </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-textarea label="Comentario de gestión" labelPlacement="stacked"></ion-textarea>
       </ion-item>
       <ion-button class="save" expand="block">Guardar</ion-button>
     </ion-card-content>

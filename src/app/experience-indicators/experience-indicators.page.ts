@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, MenuController } from '@ionic/angular';
 
 import { Chart } from 'chart.js/auto'
 import { SearchbarComponent } from '../searchbar/searchbar.component';
@@ -21,6 +21,7 @@ const scoreColors = {
 })
 
 export class ExperienceIndicatorsPage {
+  constructor(private menuCtrl: MenuController) {}
   @ViewChild('barCanvas') barCanvas: ElementRef | undefined;
   @ViewChild('lineCanvas') lineCanvas: ElementRef | undefined;
 
@@ -32,7 +33,22 @@ export class ExperienceIndicatorsPage {
     this.lineMethod();
   }
 
-  constructor() { }
+  openFirstMenu() {
+    // Open the menu by menu-id
+    this.menuCtrl.enable(true, 'first-menu');
+    this.menuCtrl.open('first-menu');
+  }
+
+  openSecondMenu() {
+    // Open the menu by menu-id
+    this.menuCtrl.enable(true, 'second-menu');
+    this.menuCtrl.open('second-menu');
+  }
+
+  openEndMenu() {
+    // Open the menu by side
+    this.menuCtrl.open('end');
+  }
 
   barChartMethod() {
     this.barChart = new Chart(this.barCanvas?.nativeElement, {

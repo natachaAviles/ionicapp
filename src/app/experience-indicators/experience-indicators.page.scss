@@ -1,0 +1,27 @@
+ion-toolbar {
+	--background: #011c40;
+	--color: white;
+}
+
+img {
+	width: 60%;
+}
+
+ion-button {
+	height: 38px;
+	width: 38px;
+}
+
+ion-badge {
+	font-size: 10px;
+	position: absolute;
+	top: -0.2rem;
+	right: -0.2rem;
+	opacity: 0.9;
+	width: 6px;
+	display: flex;
+	justify-content: center;
+	border-radius: 50%;
+	height: 17px;
+	background-color: #b71f1f;
+}

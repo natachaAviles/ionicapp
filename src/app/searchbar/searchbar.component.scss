@@ -7,23 +7,15 @@ img {
   width: 60%;
 }
 
-.filter {
-  border-radius: 50%;
+ion-button {
   height: 38px;
   width: 38px;
-  background-color: white;
-  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
-  margin-right: 10px;
-}
-
-ion-icon {
-  color: #011c40;
 }
 
 ion-badge {
   font-size: 10px;
   position: absolute;
-  top: -0.3rem;
+  top: -0.2rem;
   right: -0.2rem;
   opacity: 0.9;
   width: 6px;
@@ -32,4 +24,24 @@ ion-badge {
   border-radius: 50%;
   height: 17px;
   background-color: #b71f1f;
+}
+
+.filter {
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+
+.fast {
+  margin: 0 5px;
+  border-radius: 4px;
+  border: 1px solid #011c40;
+}
+
+ion-icon {
+  color: #011c40;
+}
+
+ion-picker {
+  --border-radius: 20px;
 }

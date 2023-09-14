@@ -7,12 +7,13 @@ import { MessageService } from 'primeng/api';
 
 import { TreeSelectModule } from 'primeng/treeselect';
 import { FormsModule } from '@angular/forms';
+import { CalendarModule } from 'primeng/calendar';
 
 @Component({
   selector: 'app-filter-modal',
   templateUrl: './filter-modal.component.html',
   styleUrls: ['./filter-modal.component.scss'],
-  imports: [IonicModule, TreeSelectModule, FormsModule],
+  imports: [IonicModule, TreeSelectModule, FormsModule, CalendarModule],
   standalone: true,
   providers: [MessageService]
 })
@@ -22,6 +23,7 @@ export class FilterModalComponent  implements OnInit {
   name?: string;
   message = '';
 
+  rangeDates: Date;
   nodes!: any[];
   selectedNodes: any;
 

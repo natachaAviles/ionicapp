@@ -44,14 +44,13 @@ export class Tab3Page {
     this.doughnutChartMethod();
   }
 
-  doughnutChartMethod() {
+  doughnutChartMethod() {      
     this.doughnutChart = new Chart(this.doughnutCanvas?.nativeElement, {
       type: 'pie',
       data: {
         labels: ['Abierto', 'En curso', 'Cerrado', 'Cerrado sin contacto', 'Cerrado sin gestión'],
         datasets: [
           {
-            label: '# of Votes',
             data: [50, 29, 15, 10, 7],
             backgroundColor: [
               stateColors['ABIERTA']['default'],
