@@ -80,13 +80,11 @@ ion-modal ion-toolbar {
   --color: white;
 }
 
-ion-card {
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-}
-
 ion-action-sheet.action-sheet .action-sheet-title {
   color: #011c40;
 }
+
+/* styles for treeselect component */
 
 .p-tree {
   margin-top: 14px;
@@ -122,4 +120,27 @@ ion-action-sheet.action-sheet .action-sheet-title {
 
 .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-tree-toggler, .p-tree .p-tree-container .p-treenode .p-treenode-content.p-highlight .p-treenode-icon {
   color: #021c40;
+}
+
+/* styles for calendar popover */
+.p-calendar .p-inputtext {
+  border-radius: 4px;
+  border: 0;
+  color: #333;
+  text-align: center;
+}
+
+.p-calendar {
+  background: white;
+  border: 1px solid #021c40;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  width: 100%;
+  border-radius: 4px;
+  height: 32px;
+  margin-top: 10px;
+}
+
+.p-inputtext:enabled:focus {
+  box-shadow: none;
+  border-color: #021c40;
 }

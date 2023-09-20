@@ -13,28 +13,12 @@
     </ion-header>
     <ion-content>
       <ion-card>
-        <ion-label>Fecha de encuesta</ion-label>
-        <ion-datetime-button color="primary" presentation="date" datetime="date"></ion-datetime-button>
+        <ion-label style="display: block;">Fecha de encuesta</ion-label>
+        <p-calendar dateFormat="dd-mm-yy" [touchUI]="true" [appendTo]="'body'" [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
         <ion-radio-group  class="filter-container" value="custom-checked">
         <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Periodo de interacción</ion-radio>
         <ion-radio labelPlacement="end" value="custom-checked" aria-label="Custom checkbox that is checked">Periodo de encuesta</ion-radio>
         </ion-radio-group>
-
-          <ion-modal [keepContentsMounted]="true">
-            <ng-template>
-              <ion-datetime
-                [multiple]="true"
-                mode="ios" 
-                presentation="date" 
-                id="date" 
-                [showDefaultButtons]="true" 
-                doneText="Listo" 
-                cancelText="Cancelar"
-                [value]="['2022-06-03', '2022-06-13', '2022-06-29']"
-                >
-              </ion-datetime>
-          </ng-template>
-        </ion-modal>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Ordenar</ion-label>
@@ -44,18 +28,18 @@
         </ion-radio-group>
       </ion-card>
       <ion-card>
-        <ion-label position="stacked">Nota</ion-label>
-        <ion-range 
-            mode="ios"
-            aria-label="Dual Knobs Range" 
-            [dualKnobs]="true" 
-            [ticks]="true" 
-            [snaps]="true" 
-            [min]="1" 
-            [max]="10"
-            [pin]="true"
-            value="2"
-          ></ion-range>
+        <div>
+          <ion-button class="levels-button" id="open-scale" fill="clear" size="small">
+            {{ buttonText }}
+            <ion-icon slot="end" name="stats-chart-outline"></ion-icon>
+          </ion-button>
+          <ion-picker trigger="open-scale" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+        </div>
+        <div style="display: flex;">
+          <ion-button size="small" shape="round" color="danger">Detractor</ion-button>
+          <ion-button size="small" shape="round" color="warning">Pasivo</ion-button>
+          <ion-button size="small" shape="round" color="success">Promotor</ion-button>
+        </div>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Estado de gestión</ion-label>
@@ -76,6 +60,10 @@
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Etiquetas de gestión</ion-label>
+        <div style="margin-top: 14px;" class="flex flex-column gap-2">
+          <label style="display: block;" htmlFor="username">Filtrar etiquetas</label>
+          <input style="width: 100%; margin-top: 4px;" pInputText id="username" aria-describedby="username-help"/>
+        </div>
         <div class="filter-container">
           <ion-chip>
             <ion-checkbox>Etiqueta 1</ion-checkbox>
@@ -90,7 +78,7 @@
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Segmentos</ion-label>
-        <p-tree [value]="nodes" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
+        <p-tree [value]="segments" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Puntos de contacto</ion-label>

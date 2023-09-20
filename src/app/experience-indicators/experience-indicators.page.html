@@ -16,24 +16,71 @@
     </ion-toolbar>
   </ion-header>
 
+  <div class="nps-indicator-cards">
+    <ion-card class="nps-indicator-title">
+      <ion-card-title>Resultados del periodo</ion-card-title>
+    </ion-card>
+    <ion-card class="nps-data-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="calendar-outline"></ion-icon>
+            <p>Fecha de interacción</p>
+          </ion-col>
+          <ion-col class="nps-data-quantity" size="auto">
+            <div>01-09-2023</div>
+            <div>30-09-2023</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card class="nps-data-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="chatbubbles-outline"></ion-icon>
+            <p>Número Total</p>
+          </ion-col>
+          <ion-col class="nps-data-quantity" size="auto">
+            <div>4056</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  
+    <ion-card class="nps-data-container">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="trending-up-outline"></ion-icon>
+            <p>NPS</p>
+            <div>NPS periodo anterior: 49</div>
+          </ion-col>
+          <ion-col class="nps-data-quantity" size="auto">
+            <div>56</div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+
   <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>NPS mes anterior</ion-card-subtitle>
-    </ion-card-header>
     <ion-card-content>
-      <ion-card-subtitle>Mes: Junio</ion-card-subtitle>
-      <ion-card-subtitle>N° total: 1200</ion-card-subtitle>
-      <ion-card-subtitle>NPS: 57</ion-card-subtitle>
       <canvas #barCanvas></canvas>
     </ion-card-content>
   </ion-card>
 
   <ion-card>
     <ion-card-header>
-      <ion-card-subtitle>Nivel: 2</ion-card-subtitle>
+      <ion-button class="levels-button" id="open-picker" fill="clear" size="small">
+        {{ buttonText }}
+        <ion-icon slot="end" name="stats-chart-outline"></ion-icon>
+      </ion-button>
     </ion-card-header>
     <ion-card-content>
       <canvas #lineCanvas  height="700"></canvas>
     </ion-card-content>
   </ion-card>
+  <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
 </ion-content>

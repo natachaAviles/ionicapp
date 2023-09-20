@@ -12,6 +12,19 @@ const scoreColors = {
   'PROMOTOR': 'rgb(121, 209, 207)'
 }
 
+const footer = (tooltipItems: any[]) => {
+  let sum = 0;
+
+  tooltipItems.forEach(function(tooltipItem) {
+    sum += tooltipItem.parsed.y;
+  });
+
+  const totalText = `N Total: ${sum}`;
+  const localText = 'NPS: ' + tooltipItems[0].parsed.y;
+
+  return `${totalText}\n${localText}\n`;
+};
+
 @Component({
   selector: 'app-experience-indicators',
   templateUrl: './experience-indicators.page.html',
@@ -27,6 +40,41 @@ export class ExperienceIndicatorsPage {
 
   barChart: any;
   lineChart: any;
+  buttonText: string = 'Seleccionar nivel';
+
+
+  public pickerColumns = [
+    {
+      name: 'niveles',
+      options: [
+        {
+          text: 'Nivel 1',
+          value: 'Nivel 1',
+        },
+        {
+          text: 'Nivel 2',
+          value: 'Nivel 2',
+        },
+        {
+          text: 'Nivel 3',
+          value: 'Nivel 3',
+        },
+      ],
+    },
+  ];
+
+  public pickerButtons = [
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+    },
+    {
+      text: 'Confirmar',
+      handler: (value: { niveles: { value: string; }; }) => {
+        this.buttonText = value.niveles.value;
+      },
+    },
+  ];
 
   ngAfterViewInit() {
     this.barChartMethod();
@@ -62,7 +110,7 @@ export class ExperienceIndicatorsPage {
           y: {
             stacked: true
           }
-        }
+        },
       },
       data: {
           labels: ["Junio"],
@@ -92,6 +140,19 @@ export class ExperienceIndicatorsPage {
           x: {
             beginAtZero: true
           }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              title: function() {
+                return '';
+              },
+              label: function(context) {
+                return 'Punto de contacto:' + ' ' + context.label
+              },
+              footer: footer,
+            }
+          }
         }
       },
       data: {
@@ -103,7 +164,7 @@ export class ExperienceIndicatorsPage {
          'punto 41', 'punto 42', 'punto 43', 'punto 44', 'punto 45'],
         datasets: [{
           tension: 0.4,
-          label: 'Puntos de contacto',
+          label: 'Punto de contactos',
           data: [65, 30, 40, 50, 90, 59, 80, 81, 56, 55, 40, 65, 70, 10, 30, 40, 23, 75, 60, 45, 20, 85, 70, 30, 50,
             45, 80, 25, 70, 60, 35, 55, 90, 20, 50, 65, 30, 40, 50, 90, 59, 80, 81, 56, 55],
           borderColor: [

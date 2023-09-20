@@ -6,14 +6,21 @@ import { NodeService } from '../nodeservice';
 import { MessageService } from 'primeng/api';
 
 import { TreeSelectModule } from 'primeng/treeselect';
+import { MultiSelectModule } from 'primeng/multiselect';
+import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { CalendarModule } from 'primeng/calendar';
 
+
+interface City {
+  name: string,
+  code: string
+}
 @Component({
   selector: 'app-filter-modal',
   templateUrl: './filter-modal.component.html',
   styleUrls: ['./filter-modal.component.scss'],
-  imports: [IonicModule, TreeSelectModule, FormsModule, CalendarModule],
+  imports: [IonicModule, TreeSelectModule, FormsModule, CalendarModule, MultiSelectModule, InputTextModule],
   standalone: true,
   providers: [MessageService]
 })
@@ -23,11 +30,25 @@ export class FilterModalComponent  implements OnInit {
   name?: string;
   message = '';
 
-  rangeDates: Date;
+  rangeDates: Date[] = [new Date('2023-09-01'), new Date('2023-09-10')];
   nodes!: any[];
+  segments!: any;
   selectedNodes: any;
+  buttonText: string = 'Seleccionar Escala'
 
-  constructor(private modalController: ModalController, public nodeService: NodeService) { }
+  cities!: City[];
+
+  selectedCities!: City[];
+
+  constructor(private modalController: ModalController, public nodeService: NodeService) {
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+    ];
+   }
 
   cancel() {
     this.modalController.dismiss();
@@ -46,5 +67,39 @@ export class FilterModalComponent  implements OnInit {
 
   ngOnInit() {
     this.nodeService.getFiles().then(files => this.nodes = files);
+    this.nodeService.getSegments().then(segments => this.segments = segments);
   }
+
+  public pickerColumns = [
+    {
+      name: 'niveles',
+      options: [
+        {
+          text: 'NPS',
+          value: 'NPS',
+        },
+        {
+          text: 'CES',
+          value: 'CES',
+        },
+        {
+          text: 'CSAT',
+          value: 'CSAT',
+        },
+      ],
+    },
+  ];
+
+  public pickerButtons = [
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+    },
+    {
+      text: 'Confirmar',
+      handler: (value: { niveles: { value: string; }; }) => {
+        this.buttonText = value.niveles.value;
+      },
+    },
+  ];
 }
