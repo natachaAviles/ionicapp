@@ -71,16 +71,21 @@
     </ion-card-content>
   </ion-card>
 
-  <ion-card>
-    <ion-card-header>
-      <ion-button class="levels-button" id="open-picker" fill="clear" size="small">
-        {{ buttonText }}
-        <ion-icon slot="end" name="stats-chart-outline"></ion-icon>
-      </ion-button>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #lineCanvas  height="700"></canvas>
-    </ion-card-content>
-  </ion-card>
-  <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+  <div class="nps-indicator-cards">
+    <ion-card class="nps-indicator-title">
+      <ion-card-title>Comparativo por Estructura</ion-card-title>
+    </ion-card>
+    <ion-card>
+      <ion-card-header>
+        <ion-button class="levels-button" id="open-picker" fill="clear" size="small">
+          {{ buttonText }}
+          <ion-icon slot="end" name="stats-chart-outline"></ion-icon>
+        </ion-button>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #lineCanvas  height="700"></canvas>
+      </ion-card-content>
+    </ion-card>
+    <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+  </div>
 </ion-content>

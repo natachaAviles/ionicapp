@@ -1,0 +1,17 @@
+.nps-indicator-title {
+	background-color: transparent;
+	box-shadow: none;
+	color: #011c40;
+	
+	ion-card-title {
+		font-size: 20px;
+	}
+}
+
+.nps-indicator-cards {
+	margin-top: 20px;
+	ion-card {
+		margin-bottom: 5px;
+		margin-top: 5px;
+	}
+}

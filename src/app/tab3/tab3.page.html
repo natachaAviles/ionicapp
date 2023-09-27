@@ -1,10 +1,12 @@
-<ion-content [fullscreen]="true">  
-  <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>Estado de gestión</ion-card-subtitle>
-    </ion-card-header>
-    <ion-card-content>
-      <canvas #doughnutCanvas></canvas>
-    </ion-card-content>
-  </ion-card>
+<ion-content [fullscreen]="true">
+  <div class="nps-indicator-cards">
+    <ion-card class="nps-indicator-title">
+      <ion-card-title>Estado de gestión</ion-card-title>
+    </ion-card>
+    <ion-card>
+      <ion-card-content>
+        <canvas #doughnutCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+  </div>
 </ion-content>

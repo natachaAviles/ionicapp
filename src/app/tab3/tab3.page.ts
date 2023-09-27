@@ -4,6 +4,21 @@ import { ExploreContainerComponent } from '../explore-container/explore-containe
 
 import {Chart} from 'chart.js/auto'
 
+const footer = (tooltipItems: any[]) => {
+  let sum = 0;
+
+  tooltipItems.forEach(function(tooltipItem) {
+    sum += tooltipItem.parsed;
+  });
+
+  const totalText = `N° Total: ${sum}`;
+  const localValue = tooltipItems[0].parsed;
+  const percentage = ((localValue / sum) * 100).toFixed(2);
+  const localText = `Porcentaje: ${percentage}%`;
+
+  return `${totalText}\n${localText}\n`;
+};
+
 const stateColors = {
   'CERRADO SIN GESTION': {
     'default': 'rgb(230, 122, 119)',
@@ -47,6 +62,21 @@ export class Tab3Page {
   doughnutChartMethod() {      
     this.doughnutChart = new Chart(this.doughnutCanvas?.nativeElement, {
       type: 'pie',
+      options: {
+        plugins: {
+          tooltip: {
+            callbacks: {
+              title: function() {
+                return '';
+              },
+              label: function(context) {
+                return 'Estado:' + ' ' + context.label
+              },
+              footer: footer,
+            }
+          }
+        }
+      },
       data: {
         labels: ['Abierto', 'En curso', 'Cerrado', 'Cerrado sin contacto', 'Cerrado sin gestión'],
         datasets: [

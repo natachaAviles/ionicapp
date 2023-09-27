@@ -60,21 +60,7 @@
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Etiquetas de gestión</ion-label>
-        <div style="margin-top: 14px;" class="flex flex-column gap-2">
-          <label style="display: block;" htmlFor="username">Filtrar etiquetas</label>
-          <input style="width: 100%; margin-top: 4px;" pInputText id="username" aria-describedby="username-help"/>
-        </div>
-        <div class="filter-container">
-          <ion-chip>
-            <ion-checkbox>Etiqueta 1</ion-checkbox>
-          </ion-chip>
-          <ion-chip>
-            <ion-checkbox>Etiqueta 2</ion-checkbox>
-          </ion-chip>
-          <ion-chip>
-            <ion-checkbox>Etiqueta 3</ion-checkbox>
-          </ion-chip>
-        </div>
+        <p-multiSelect [options]="cities" [appendTo]="'body'" [(ngModel)]="selectedCities" defaultLabel="Buscar etiquetas..." optionLabel="name" display="chip"></p-multiSelect>
       </ion-card>
       <ion-card>
         <ion-label position="stacked">Segmentos</ion-label>
