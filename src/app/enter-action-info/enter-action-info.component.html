@@ -28,12 +28,12 @@
     <span>6</span> 
   </ion-card-subtitle>
   <ion-card-subtitle>
-    Comentario: 
-    <span>es simplemente el texto de relleno de las imprentas y archivos de texto.</span> 
-  </ion-card-subtitle>
-  <ion-card-subtitle>
     Drivers: 
     <span>Example text</span> 
+  </ion-card-subtitle>
+  <ion-card-subtitle>
+    Comentario: 
+    <span>es simplemente el texto de relleno de las imprentas y archivos de texto. <ion-button id="see-more" style="display: grid;" fill="clear">--- Ver más ---</ion-button></span> 
   </ion-card-subtitle>
 </div>
 <div *ngIf="selectedSegment === 'data'">
@@ -54,3 +54,44 @@
     <span>Detalle campo 4</span> 
   </ion-card-subtitle>
 </div>
+<ion-modal trigger="see-more">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button color="light" (click)="cancel()">Cancelar</ion-button>
+        </ion-buttons>
+        <ion-title>Comentario</ion-title>
+        <ion-buttons slot="end">
+          <ion-button color="light" (click)="confirm()" [strong]="true">Confirmar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content color="light">
+      <ion-list [inset]="true">
+        <ion-item lines="none">
+          <p>es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+          </p>
+        </ion-item>
+        <ion-item lines="none">
+          <p>es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+            es simplemente el texto de relleno de las imprentas y archivos de texto.
+          </p>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

@@ -43,7 +43,7 @@
             <p>Número Total</p>
           </ion-col>
           <ion-col class="nps-data-quantity" size="auto">
-            <div>4056</div>
+            <p>4056</p>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -58,7 +58,7 @@
             <div>NPS periodo anterior: 49</div>
           </ion-col>
           <ion-col class="nps-data-quantity" size="auto">
-            <div>56</div>
+            <p>56</p>
           </ion-col>
         </ion-row>
       </ion-grid>
@@ -66,9 +66,16 @@
   </div>
 
   <ion-card>
+    <ion-card-header>
+      <ion-button class="levels-button" id="bar-chart" fill="clear" size="small">
+        {{ barChartButtonText }}
+        <ion-icon slot="end" name="calendar-number-outline"></ion-icon>
+      </ion-button>
+    </ion-card-header>
     <ion-card-content>
       <canvas #barCanvas></canvas>
     </ion-card-content>
+    <ion-picker trigger="bar-chart" [columns]="pickerColumns2" [buttons]="pickerButtons"></ion-picker>
   </ion-card>
 
   <div class="nps-indicator-cards">

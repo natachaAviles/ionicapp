@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Input } from '@angular/core';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, ModalController } from '@ionic/angular';
+
+import { OverlayEventDetail } from '@ionic/core/components';
 
 @Component({
   selector: 'app-enter-action-info',
@@ -13,7 +15,23 @@ export class EnterActionInfoComponent  implements OnInit {
   @Input()
   selectedSegment!: string | 'feedback';
 
-  constructor() { }
+  constructor(private modalController: ModalController) {}
+
+  cancel() {
+    this.modalController.dismiss();
+  }
+
+  confirm() {
+    this.modalController.dismiss({});
+  }
+
+  onWillDismiss(event: Event) {
+    const ev = event as CustomEvent<OverlayEventDetail<string>>;
+    if (ev.detail.role === 'confirm') {
+      console.log(`Hello, ${ev.detail.data}!`)
+    }
+  }
+
 
   ngOnInit() {}
 

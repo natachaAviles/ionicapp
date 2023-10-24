@@ -13,7 +13,7 @@
     </ion-header>
     <ion-content>
       <ion-card>
-        <ion-label style="display: block;">Fecha de encuesta</ion-label>
+        <ion-label style="display: block;">Tipo y rango de fecha</ion-label>
         <p-calendar dateFormat="dd-mm-yy" [touchUI]="true" [appendTo]="'body'" [(ngModel)]="rangeDates" selectionMode="range" [readonlyInput]="true"></p-calendar>
         <ion-radio-group  class="filter-container" value="custom-checked">
         <ion-radio labelPlacement="end" value="custom" aria-label="Custom checkbox">Periodo de interacción</ion-radio>
@@ -63,12 +63,12 @@
         <p-multiSelect [options]="cities" [appendTo]="'body'" [(ngModel)]="selectedCities" defaultLabel="Buscar etiquetas..." optionLabel="name" display="chip"></p-multiSelect>
       </ion-card>
       <ion-card>
-        <ion-label position="stacked">Segmentos</ion-label>
-        <p-tree [value]="segments" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
-      </ion-card>
-      <ion-card>
         <ion-label position="stacked">Puntos de contacto</ion-label>
         <p-tree [value]="nodes" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
+      </ion-card>
+      <ion-card>
+        <ion-label position="stacked">Segmentos</ion-label>
+        <p-tree [value]="segments" [(selection)]="selectedNodes" selectionMode="checkbox" [filter]="true" filterPlaceholder="Buscar"></p-tree>
       </ion-card>
     </ion-content>
   </ng-template>

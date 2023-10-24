@@ -6,29 +6,82 @@ import { EnterActionInfoComponent } from '../enter-action-info/enter-action-info
 import { TabsPage } from '../tabs/tabs.page';
 import { RouterLinkWithHref } from '@angular/router';
 
+import { MultiSelectModule } from 'primeng/multiselect';
+
+
+interface City {
+  name: string,
+  code: string
+}
+
 @Component({
   selector: 'app-item-detail',
   templateUrl: './item-detail.page.html',
   styleUrls: ['./item-detail.page.scss'],
   standalone: true,
-  imports: [IonicModule, CommonModule, FormsModule, EnterActionInfoComponent, RouterLinkWithHref]
+  imports: [IonicModule, CommonModule, FormsModule, EnterActionInfoComponent, RouterLinkWithHref, MultiSelectModule]
 })
 export class ItemDetailPage implements OnInit {
   selectedSegment: string = 'feedback';
   component = TabsPage;
+  selectedCities!: City[];
+  cities!: City[];
 
   public actionSheetButtons = [
     {
-      text: 'Telefono 1',
+      text: 'Móvil',
+      icon: 'phone-portrait-outline',
       data: {
         action: 'share',
       },
+      handler: () => {
+        // Add your code here to handle the 'Telefono 2' action, avoid close action on call
+        return false 
+      }
     },
     {
-      text: 'Telefono 2',
+      text: 'Teléfono 1',
+      icon: 'call-outline',
       data: {
         action: 'share',
       },
+      handler: () => {
+        // Add your code here to handle the 'Telefono 2' action, avoid close action on call
+        return false 
+      }
+    },
+    {
+      text: 'Teléfono 2',
+      icon: 'call-outline',
+      data: {
+        action: 'share',
+      },
+      handler: () => {
+        // Add your code here to handle the 'Telefono 2' action, avoid close action on call
+        return false 
+      }
+    },
+    {
+      text: 'Whatsapp',
+      icon: 'logo-whatsapp',
+      data: {
+        action: 'share',
+      },
+      handler: () => {
+        // Add your code here to handle the 'Telefono 2' action, avoid close action on call
+        return false 
+      }
+    },
+    {
+      text: 'Correo',
+      icon: 'mail-outline',
+      data: {
+        action: 'share',
+      },
+      handler: () => {
+        // Add your code here to handle the 'Telefono 2' action, avoid close action on call
+        return false 
+      }
     },
     {
       text: 'Cancelar',
@@ -39,7 +92,15 @@ export class ItemDetailPage implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor() {
+    this.cities = [
+      {name: 'New York', code: 'NY'},
+      {name: 'Rome', code: 'RM'},
+      {name: 'London', code: 'LDN'},
+      {name: 'Istanbul', code: 'IST'},
+      {name: 'Paris', code: 'PRS'}
+    ];
+  }
   ngOnInit() {}
 
 }

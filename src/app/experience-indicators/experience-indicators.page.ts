@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, MenuController } from '@ionic/angular';
@@ -41,6 +41,7 @@ export class ExperienceIndicatorsPage {
   barChart: any;
   lineChart: any;
   buttonText: string = 'Seleccionar nivel';
+  barChartButtonText: string = 'Mensual'
 
 
   public pickerColumns = [
@@ -58,6 +59,26 @@ export class ExperienceIndicatorsPage {
         {
           text: 'Nivel 3',
           value: 'Nivel 3',
+        },
+      ],
+    },
+  ];
+
+  public pickerColumns2 = [
+    {
+      name: 'niveles',
+      options: [
+        {
+          text: 'Mensual',
+          value: 'Mensual',
+        },
+        {
+          text: 'Semanal',
+          value: 'Semanal',
+        },
+        {
+          text: 'Semanal +',
+          value: 'Semanal +',
         },
       ],
     },
@@ -113,19 +134,30 @@ export class ExperienceIndicatorsPage {
         },
       },
       data: {
-          labels: ["Junio"],
-          datasets: [{
-            data: [15],
-            label: 'Detractor',
-            backgroundColor: scoreColors['DETRACTOR'],
-          },{
-              data: [15],
-              label: 'Pasivo',
-              backgroundColor: scoreColors['PASIVO'],
-          },{
-            data: [10],
-            label: 'Promotor',
-            backgroundColor:  scoreColors['PROMOTOR'],
+        labels: ["Junio"],
+        datasets: [{
+          data: [15],
+          type: 'bar',
+          label: 'Detractor',
+          backgroundColor: scoreColors['DETRACTOR'],
+        }, {
+          data: [15],
+          type: 'bar',
+          label: 'Pasivo',
+          backgroundColor: scoreColors['PASIVO'],
+        }, {
+          data: [10],
+          type: 'bar',
+          label: 'Promotor',
+          backgroundColor: scoreColors['PROMOTOR'],
+        }, {
+          data: [10, 20, 30, 40],
+          type: 'line',
+          label: 'NPS',
+          backgroundColor: '#011c40',
+          borderColor: '#011c40',
+          borderWidth: 2,
+          fill: false,
         }]
       },
     })

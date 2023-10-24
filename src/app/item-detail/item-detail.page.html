@@ -31,7 +31,7 @@
         <ion-icon name="list-outline"></ion-icon>
       </ion-button>
       <ion-button class="action-button" fill="outline" size="small" slot="end" shape="round" id="open-action-sheet">
-        Hacer llamada
+        Contactar
         <ion-icon name="call-outline"></ion-icon>
       </ion-button>
       <ion-action-sheet
@@ -50,19 +50,13 @@
       <ion-card-subtitle>Ingresar nueva acción</ion-card-subtitle>
     </ion-card-header>
     <ion-card-content>
-      <ion-item>
+      <p-multiSelect [options]="cities" [appendTo]="'body'" [(ngModel)]="selectedCities" defaultLabel="Buscar etiquetas de gestión" optionLabel="name" display="chip"></p-multiSelect>
+      <ion-item style="margin-top: 14px;">
         <ion-select label="Estado de gestión" label-placement="stacked">
           <ion-select-option value="apple">Abierto</ion-select-option>
           <ion-select-option value="banana">Cerrado</ion-select-option>
           <ion-select-option value="orange">Cerrado sin gestión</ion-select-option>
           <ion-select-option value="orange">Cerrado sin contacto</ion-select-option>
-        </ion-select>
-      </ion-item>
-      <ion-item>
-        <ion-select label="Etiqueta de gestión" [multiple]="true" label-placement="stacked">
-          <ion-select-option value="apples">Etiqueta 1</ion-select-option>
-          <ion-select-option value="oranges">Etiqueta 2</ion-select-option>
-          <ion-select-option value="bananas">Etiqueta 3</ion-select-option>
         </ion-select>
       </ion-item>
       <ion-item>

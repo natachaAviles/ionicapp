@@ -15,13 +15,13 @@
   </ion-toolbar>
   <div style="display: flex; align-items: center;">
     <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+    <ion-button id="open-toast"  size="small" class="fast" fill="clear">
+      <ion-icon name="flash-outline"></ion-icon>
+    </ion-button>
     <ion-button id="open-modal" class="filter" size="small" fill="clear">
       <ion-icon name="filter-outline"></ion-icon>
     </ion-button>
-    <ion-button id="open-picker" size="small" class="fast" fill="clear">
-      <ion-icon name="flash-outline"></ion-icon>
-    </ion-button>
-    <ion-picker trigger="open-picker" [columns]="pickerColumns" [buttons]="pickerButtons"></ion-picker>
+    <ion-toast trigger="open-toast" message="Filtrando por elementos más antiguos" [duration]="3000000" icon="information-circle-outline"></ion-toast>
   </div>
   <app-filter-modal></app-filter-modal>
 </div>

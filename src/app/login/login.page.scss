@@ -1,22 +1,45 @@
 .loyalink-login {
-    --background: #011c40;
-    --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
-    --ripple-color: deeppink;
-    width: 100%;
+  --background: #011c40;
+  --box-shadow: 0 2px 6px 0 rgb(0, 0, 0, 0.25);
+  --ripple-color: deeppink;
+  width: 100%;
 }
 
 .loyalink-login-content {
-   --background: url(../../assets/logo-clear.png);
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 100vh;
+  --background: url(../../assets/logo-clear.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .divider {
-   border: 0.5px solid lightgray;
+  border: 0.5px solid lightgray;
 }
 
 ion-card {
-   box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+}
+
+.password {
+  --color: #011c40;
+}
+
+.notification {
+  width: 100%;
+  max-height: 50px;
+  min-height: 50px;
+  border: 2px solid #dd2f30;
+  background-color: #fce8e8;
+  color: #dd2f30;
+  border-radius: 4px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 14px;
+
+  ion-icon {
+    margin-right: 10px;
+  }
 }
