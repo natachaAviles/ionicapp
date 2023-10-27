@@ -51,3 +51,11 @@ ion-toast {
   --box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.2);
   --color: #ddd;
 }
+
+.simpleFilterActivated {
+  background-color: #011c40;
+
+  ion-icon {
+    color: white;
+  }
+}

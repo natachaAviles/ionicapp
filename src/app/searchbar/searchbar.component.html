@@ -14,11 +14,11 @@
     </ion-buttons>
   </ion-toolbar>
   <div style="display: flex; align-items: center;">
-    <ion-searchbar placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
-    <ion-button id="open-toast"  size="small" class="fast" fill="clear">
+    <ion-searchbar  placeholder="Buscar" class="custom-searchbar"></ion-searchbar>
+    <ion-button [ngClass]="{simpleFilterActivated: 'activated--filter'}" id="open-toast"  size="small" class="fast" fill="clear">
       <ion-icon name="flash-outline"></ion-icon>
     </ion-button>
-    <ion-button id="open-modal" class="filter" size="small" fill="clear">
+    <ion-button [ngClass]="{advancedFilterActivated: 'activated--filter'}" id="open-modal" class="filter" size="small" fill="clear">
       <ion-icon name="filter-outline"></ion-icon>
     </ion-button>
     <ion-toast trigger="open-toast" message="Filtrando por elementos más antiguos" [duration]="3000000" icon="information-circle-outline"></ion-toast>

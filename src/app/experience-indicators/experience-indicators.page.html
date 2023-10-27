@@ -1,20 +1,5 @@
 <ion-content [fullscreen]="true">
-  <ion-header>
-    <ion-toolbar>
-      <ion-buttons slot="start">
-        <ion-menu-button (click)="openFirstMenu()" color="light" auto-hide="false"></ion-menu-button>
-      </ion-buttons>
-      <ion-title>
-        <img alt="Loyalink logo" src="../../assets/Loyalink-final-negativo.png" />
-      </ion-title>
-      <ion-buttons slot="primary">
-        <ion-button (click)="openSecondMenu()">
-          <ion-icon color="light" name="notifications-outline"></ion-icon>
-          <ion-badge color="danger">1</ion-badge>
-        </ion-button>
-      </ion-buttons>
-    </ion-toolbar>
-  </ion-header>
+  <app-searchbar showSearchBar></app-searchbar>
 
   <div class="nps-indicator-cards">
     <ion-card class="nps-indicator-title">

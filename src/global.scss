@@ -149,4 +149,27 @@ ion-action-sheet.action-sheet .action-sheet-title {
 .p-multiselect {
   width: 100%;
   margin-top: 14px;
+  border: none;
+  border-radius: 0;
+  border-bottom: 0.5px solid #c8c7cb;
+}
+
+.p-multiselect .p-multiselect-label {
+  display: flex;
+  flex-flow: wrap;
+}
+
+.p-multiselect.p-multiselect-chip .p-multiselect-token {
+  padding: 0.1rem 0.5rem;
+  background: white;
+  border-radius: 50px;
+  color: #021c40;
+  border: 1px solid #bae2e8;
+  font-size: 0.8rem;
+}
+
+.p-multiselect .p-multiselect-trigger {
+  background: transparent;
+  color: #021c40;
+  width: 1.3rem;
 }

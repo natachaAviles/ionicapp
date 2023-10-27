@@ -134,30 +134,28 @@ export class ExperienceIndicatorsPage {
         },
       },
       data: {
-        labels: ["Junio"],
-        datasets: [{
-          data: [15],
-          type: 'bar',
-          label: 'Detractor',
-          backgroundColor: scoreColors['DETRACTOR'],
-        }, {
-          data: [15],
-          type: 'bar',
-          label: 'Pasivo',
-          backgroundColor: scoreColors['PASIVO'],
-        }, {
-          data: [10],
-          type: 'bar',
-          label: 'Promotor',
-          backgroundColor: scoreColors['PROMOTOR'],
-        }, {
-          data: [10, 20, 30, 40],
-          type: 'line',
-          label: 'NPS',
-          backgroundColor: '#011c40',
-          borderColor: '#011c40',
-          borderWidth: 2,
-          fill: false,
+          labels: ["Junio"],
+          datasets: [{
+            data: [15],
+            type: 'bar',
+            label: 'Detractor',
+            backgroundColor: scoreColors['DETRACTOR'],
+          },{
+              data: [15],
+              type: 'bar',
+              label: 'Pasivo',
+              backgroundColor: scoreColors['PASIVO'],
+          },{
+            data: [10],
+            type: 'bar',
+            label: 'Promotor',
+            backgroundColor:  scoreColors['PROMOTOR'],
+          },
+          {
+            data: [10, 20, 30,40],
+            type: 'line',
+            label: 'NPS',
+            backgroundColor: '#011c40',
         }]
       },
     })
