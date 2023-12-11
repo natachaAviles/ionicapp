@@ -119,44 +119,59 @@ export class ExperienceIndicatorsPage {
     this.menuCtrl.open('end');
   }
 
+
   barChartMethod() {
     this.barChart = new Chart(this.barCanvas?.nativeElement, {
       type: 'bar',
       options: {
-        indexAxis: 'y',
+        responsive: true,
         scales: {
-          x: {
-            stacked: true,
-          },
           y: {
-            stacked: true
-          }
+            beginAtZero: true,
+            stacked: true,
+            display: "auto",
+          },
         },
+        indexAxis: 'y',
       },
       data: {
-          labels: ["Junio"],
-          datasets: [{
-            data: [15],
-            type: 'bar',
-            label: 'Detractor',
-            backgroundColor: scoreColors['DETRACTOR'],
-          },{
-              data: [15],
-              type: 'bar',
-              label: 'Pasivo',
-              backgroundColor: scoreColors['PASIVO'],
-          },{
-            data: [10],
-            type: 'bar',
-            label: 'Promotor',
-            backgroundColor:  scoreColors['PROMOTOR'],
+        labels: ["1", "2", "3", "4"],
+        datasets: [
+          {
+            label: 'NPS',
+            yAxisID: "bar-stack",
+            backgroundColor: "black",
+            type: 'line',
+            fill: false,
+            tension: 0.4,
+            borderWidth: 0.8,
+            data: [80, 130, 100, 140, 138, 125,110, 145],
           },
           {
-            data: [10, 20, 30,40],
-            type: 'line',
-            label: 'NPS',
-            backgroundColor: '#011c40',
-        }]
+            label: "Detractor",
+            yAxisID: 'bar-stack',
+            backgroundColor: "#d7807a",          
+            borderWidth: 1,
+            stack: 'bef',
+            data: [30, 50, 60, 70,]
+          },
+          {
+            label: "Pasivo",
+            yAxisID: 'bar-stack',
+            backgroundColor: "#fbe08b",
+            borderWidth: 1,
+            stack: 'bef',
+            data: [30, 50, 60, 70]
+          },
+          {
+            label: "Promotor",
+            yAxisID: 'bar-stack',
+            backgroundColor: "#8ececd",            
+            borderWidth: 1,
+            stack: 'bef',
+            data: [40, 70, 30, 60]
+          },
+        ]
       },
     })
   }

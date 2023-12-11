@@ -21,4 +21,8 @@ export const routes: Routes = [
     path: 'experience-indicators',
     loadComponent: () => import('./experience-indicators/experience-indicators.page').then( m => m.ExperienceIndicatorsPage)
   },
+  {
+    path: 'retrieve-password',
+    loadComponent: () => import('./retrieve-password/retrieve-password.page').then( m => m.RetrievePasswordPage)
+  },
 ];
